@@ -1,0 +1,19 @@
+{
+  "author": "Ekaagr Chaudharee",
+  "description": "com-trustscore",
+  "dependencies": {
+    "@adscore/nodejs-common": "1.0.7",
+    "linkedom": "0.18.12",
+    "marked": "16.2.1",
+    "marked-footnote": "1.4.0"
+  },
+  "devDependencies": {
+    "wrangler": "4.36.0"
+  },
+  "keywords": [],
+  "license": "ISC",
+  "main": "_.ts",
+  "name": "com-trustscore",
+  "type": "module",
+  "version": "1.1.1"
+}
