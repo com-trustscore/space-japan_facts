@@ -1,2 +1,2 @@
-run x +args='':
-  cd {{x}} && clear && bunx wrangler dev {{args}}
+run +x='':
+  clear && bunx wrangler dev {{x}}

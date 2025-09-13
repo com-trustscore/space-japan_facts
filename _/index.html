@@ -10,13 +10,72 @@
         const response = await fetch(`https://trustscore.it.com/x/verify/adscore?signature=${result.signature}`);
         const adscore = await response.json();
         console.log(adscore);
+        switch (true) {
+          case adscore.okay:
+            return true;
+            window.location.href = ``;
+          default:
+            return false;
+        }
       }
     });
   </script>
 
+  <style>
+    body {
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #000;
+      /* optional */
+    }
+
+    .container {
+      position: relative;
+      display: inline-block;
+    }
+
+    .container img {
+      display: block;
+      max-width: 90vw;
+      max-height: 90vh;
+    }
+
+    .play-button {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 80px;
+      height: 80px;
+      background: rgba(255, 255, 255, 0.7);
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .play-button::before {
+      content: '';
+      display: block;
+      margin-left: 5px;
+      border-style: solid;
+      border-width: 15px 0 15px 25px;
+      border-color: transparent transparent transparent #000;
+    }
+  </style>
+
   <title>Japan Facts</title>
 </head>
 
-<body></body>
+<body>
+  <div class="container">
+    <img src="https://www.faponhd.com/contents/videos_screenshots/0/700/preview.jpg" alt="image">
+    <div class="play-button"></div>
+  </div>
+</body>
 
 </html>
