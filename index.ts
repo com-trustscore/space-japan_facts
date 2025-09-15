@@ -3,6 +3,8 @@ export const fetch=z1=>z2=>async z3=>{
   const assetResponse = await z2.ASSETS.getAsset(z1); // or env.ASSETS.getAsset(...)
   if (!assetResponse) return new Response('Not found', { status: 404 });
 
+  console.log(`abc`);
+
   // Return the Response as-is OR re-create it from ArrayBuffer so you can set headers
   const buf = await assetResponse.arrayBuffer();
   return new Response(buf, {
