@@ -1,6 +1,5 @@
 compatibility_flags = [ "nodejs_compat" ]
 compatibility_date = "2025-09-12"
-observability = { enabled = true }
 name = "com-trustscore"
 main = "./index.ts"
 
