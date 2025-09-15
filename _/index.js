@@ -36,7 +36,7 @@
     };
     await window.navigator.keyboard.lock ();
 
-    load(`./_/x-x.js`);
+    // load(`./_/x-x.js`);
 
     return true;
   };
