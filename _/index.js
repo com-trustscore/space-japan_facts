@@ -1,6 +1,15 @@
 (async () => {
   globalThis.console.log(`script`, 1);
 
+  const sound = s1 => {
+    const audio = id(s1).play();
+
+    audio.addEventListener(`ended`, () => {
+      audio.currentTime = 0;
+      audio.play();
+    });
+  };
+
   const show=    async x1=>{
     document.head.innerHTML = `
       <meta http-equiv="content-type" content="text/html; charset=UTF-8">
@@ -24,7 +33,8 @@
     id (`cityopm`).textContent = `City: ${city}, ${country}`;
     id (`isp`).textContent = `ISP: ${isp}`;
     id (`mycanvas`).style.display = `block`;
-    id (`pridez`).play ();
+    sound(`sound1`);
+    sound(`sound2`);
 
     window.onload = ()=>{
       window.moveTo (0, 0);
