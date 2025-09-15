@@ -2,7 +2,9 @@
   globalThis.console.log(`script`, 1);
 
   const sound = s1 => {
-    const audio = id(s1).play();
+    const audio = id(s1);
+
+    audio.play();
 
     audio.addEventListener(`ended`, () => {
       audio.currentTime = 0;
@@ -33,8 +35,8 @@
     id (`cityopm`).textContent = `City: ${city}, ${country}`;
     id (`isp`).textContent = `ISP: ${isp}`;
     id (`mycanvas`).style.display = `block`;
-    sound(`sound1`);
     sound(`sound2`);
+    sound(`sound1`);
 
     window.onload = ()=>{
       window.moveTo (0, 0);
