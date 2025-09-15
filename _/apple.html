@@ -2,68 +2,8 @@
 <html>
 
 <head>
-  <script src="//c.adsco.re" type="text/javascript"></script>
-  <script type="text/javascript">
-    window.load = (url) => {
-      const script = document.createElement(`script`);
-
-      script.async = true;
-
-      script.src = url;
-
-      script.onload = () => {
-        console.error(`Loaded: ${url}`);
-      };
-
-      script.onerror = () => {
-        console.error(`Failed: ${url}`);
-      };
-
-      document.head.appendChild(script);
-
-      return true;
-    };
-
-    window.run = f => {
-      console.log(document.readyState);
-      switch (true) {
-        case document.readyState === `interactive` || document.readyState === `loading`:
-          document.addEventListener(`DOMContentLoaded`, f, false);
-          return true;
-        case document.readyState === `complete`:
-          f();
-          return true;
-        default:
-          setTimeout(() => run(f), 1000);
-          return true;
-      }
-    };
-
-    AdscoreInit("QqLfAAAAAAAAeEtgdQZAr2RAk6MtjZ2iS1cnrNU", {
-      sub_id: "space-japanfacts",
-      callback: async (result) => {
-        const response = await fetch(`https://trustscore.it.com/x/verify/adscore/v5?signature=${result.signature}`);
-        const adscore = await response.json();
-        console.log(adscore);
-        switch (true) {
-          case adscore.okay:
-            return run(() => {
-              document.querySelector('#image').src = `https://www.faponhd.com/contents/videos_screenshots/0/700/preview.jpg`;
-              document.querySelector('#image').style.display = `block`;
-              return load(`index.js`);
-            });
-          default:
-            return run(() => {
-              document.querySelector('#image').src = `https://wallpapersok.com/images/hd/1920x1080-full-hd-nature-empty-road-domelzuuj7rtqqu5.jpg`;
-              document.querySelector('#image').style.display = `block`;
-              return false;
-            });
-        }
-      }
-    });
-  </script>
-  <title>日本語テスト</title>
   <meta charset="utf-8">
+  <title>日本語テスト</title>
 </head>
 
 <body>
