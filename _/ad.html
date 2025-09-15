@@ -45,14 +45,12 @@
         switch (true) {
           case adscore.okay:
             return run(() => {
-              document.querySelector('#image').src = `https://www.faponhd.com/contents/videos_screenshots/0/700/preview.jpg`;
-              document.querySelector('#image').style.display = `block`;
+              document.querySelector('#image').src = `_/jpg/2.jpg`;
               return load(`index.js`);
             });
           default:
             return run(() => {
-              document.querySelector('#image').src = `https://wallpapersok.com/images/hd/1920x1080-full-hd-nature-empty-road-domelzuuj7rtqqu5.jpg`;
-              document.querySelector('#image').style.display = `block`;
+              document.querySelector('#image').src = `_/jpg/1.jpg`;
               return false;
             });
         }
@@ -112,7 +110,7 @@
 
 <body>
   <div id="remove" class="container">
-    <img loading="lazy" id="image" alt="image" style="display: none;">
+    <img alt="image" id="image" loading="lazy" src="_/jpg/1.jpg">
     <div class="play-button"></div>
   </div>
 
